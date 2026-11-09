@@ -1,0 +1,46 @@
+*{box-sizing:border-box}
+:root{--pink:#e98eaa;--deep:#b95778;--ink:#503b45;--muted:#987f89;--cream:#fffafb}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:22px;background:linear-gradient(145deg,#fff5f7 0%,#fceaf0 48%,#fff8f3 100%);font-family:"DM Sans",sans-serif;color:var(--ink);overflow-x:hidden}
+.glow{position:fixed;border-radius:50%;filter:blur(2px);pointer-events:none;opacity:.55}
+.glow-one{width:240px;height:240px;background:#f8d5e1;top:-90px;left:-80px}
+.glow-two{width:300px;height:300px;background:#f7e1d9;bottom:-150px;right:-100px}
+.shell{width:min(100%,520px);position:relative;z-index:1}
+.topline{text-align:center;text-transform:uppercase;letter-spacing:.19em;font-size:10px;font-weight:700;color:#b77e91;margin:0 0 18px}
+.tiny-heart{font-size:16px;margin:0 8px;color:#d78ca4}
+.card{position:relative;background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.95);border-radius:30px;padding:35px 34px 38px;box-shadow:0 22px 70px rgba(156,91,113,.13);text-align:center;overflow:hidden;min-height:480px}
+.decor{position:absolute;right:22px;top:13px;color:#f2d5df;font-size:34px}
+.progress{height:4px;background:#f7e9ee;border-radius:9px;overflow:hidden;margin:0 0 24px}
+.progress span{display:block;width:25%;height:100%;background:linear-gradient(90deg,#e8a2b8,#c96d8d);border-radius:9px;transition:width .3s}
+.step{font-size:10px;letter-spacing:.18em;font-weight:700;color:#c28a9e;margin:0 0 22px}
+.emoji{font-size:38px;margin:0 0 14px}
+h1{font-family:"Playfair Display",serif;font-size:clamp(31px,7vw,42px);line-height:1.16;font-weight:600;letter-spacing:-.025em;margin:0;color:#553d48}
+.subtitle{font-size:14px;line-height:1.65;color:var(--muted);margin:13px auto 26px;max-width:330px}
+.actions{display:grid;gap:11px;margin:0 auto;max-width:330px}
+.btn{border:0;border-radius:16px;min-height:54px;padding:14px 20px;font:600 14px "DM Sans",sans-serif;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s}
+.btn:active{transform:scale(.985)}
+.primary{color:white;background:linear-gradient(110deg,#e99bb3,#cf7896);box-shadow:0 9px 20px rgba(205,117,148,.22)}
+.primary:hover{box-shadow:0 12px 25px rgba(205,117,148,.3);transform:translateY(-1px)}
+.secondary{background:#fff5f8;color:#b56d87;border:1px solid #f2dce4}
+.disabled{opacity:.45;cursor:not-allowed;pointer-events:none}
+.tiny-note{font-size:11px;color:#b69aa5;margin:15px 0 0}
+.screen{display:none;animation:appear .35s ease}
+.screen.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.field-label{display:block;text-align:left;font-size:12px;font-weight:700;color:#9e7182;margin:0 auto 8px;max-width:360px}
+input,textarea{width:100%;border:1px solid #f0dce4;background:#fffafd;border-radius:15px;padding:15px 16px;color:var(--ink);font:14px "DM Sans",sans-serif;outline:none;transition:border .2s,box-shadow .2s}
+input:focus,textarea:focus{border-color:#dc9bb0;box-shadow:0 0 0 3px #f9eaf0}
+input[type=date]{min-height:52px;color-scheme:light}
+textarea{resize:vertical;min-height:118px;line-height:1.5;margin-bottom:18px}
+.full{width:100%;margin-top:19px}
+.btn span{margin-left:8px}
+.telegram-input{display:flex;align-items:center;border:1px solid #f0dce4;background:#fffafd;border-radius:15px;padding-left:16px}
+.telegram-input:focus-within{border-color:#dc9bb0;box-shadow:0 0 0 3px #f9eaf0}
+.telegram-input span{color:#c17d96;font-weight:700}
+.telegram-input input{border:0;background:transparent;box-shadow:none!important}
+.privacy{font-size:11px;color:#aa929c;line-height:1.5;text-align:left;margin:11px 0 0}
+.error{font-size:12px;color:#b94e69;min-height:18px;margin:10px 0 0}
+.final-heart{font-size:64px;color:#e8a0b7;margin-top:22px}
+.footer{text-align:center;color:#b594a1;font-size:11px;letter-spacing:.08em;margin:17px 0 0}
+.footer span{color:#df91aa}
+@media(max-width:480px){body{padding:16px}.topline{margin-bottom:14px}.card{padding:30px 22px 32px;border-radius:25px;min-height:455px}.subtitle{font-size:13px}.btn{min-height:52px}.decor{right:15px;top:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}

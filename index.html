@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff4f7">
+  <title>Маленькое приглашение 💌</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glow glow-one"></div><div class="glow glow-two"></div>
+  <main class="shell">
+    <div class="topline"><span class="tiny-heart">♡</span> маленькое приглашение <span class="tiny-heart">♡</span></div>
+    <section class="card">
+      <div class="decor" aria-hidden="true">✿</div>
+      <div class="progress"><span id="progressBar"></span></div>
+      <p class="step" id="stepLabel">ВОПРОС 1 ИЗ 4</p>
+
+      <section class="screen active" id="screen1">
+        <div class="emoji">🌷</div>
+        <h1>Пойдёшь ли ты<br>со мной гулять?</h1>
+        <p class="subtitle">Есть идея провести один день вместе</p>
+        <div class="actions">
+          <button class="btn primary" id="yes1">Да, с удовольствием 💗</button>
+          <button class="btn secondary" id="no1">Нет</button>
+        </div>
+      </section>
+
+      <section class="screen" id="screenSure">
+        <div class="emoji">🥺</div>
+        <h1>Ты уверена?</h1>
+        <p class="subtitle">Может, всё-таки подарим этому дню шанс?</p>
+        <div class="actions">
+          <button class="btn primary" id="yesSure">Ладно, да! 💞</button>
+          <button class="btn secondary disabled" id="noSure" aria-disabled="true" tabindex="-1">Нет</button>
+        </div>
+        <p class="tiny-note">Кажется, у кнопки «нет» выходной 🙈</p>
+      </section>
+
+      <section class="screen" id="screen2">
+        <div class="emoji">🗓️</div>
+        <h1>Выбери дату</h1>
+        <p class="subtitle">Когда тебе было бы удобно?</p>
+        <label class="field-label" for="date">Дата нашей прогулки</label>
+        <input id="date" type="date">
+        <button class="btn primary full" id="next2">Продолжить <span>→</span></button>
+      </section>
+
+      <section class="screen" id="screen3">
+        <div class="emoji">✨</div>
+        <h1>Чем ты хочешь<br>заняться?</h1>
+        <p class="subtitle">Любая идея — отличная идея</p>
+        <textarea id="activity" rows="4" maxlength="500" placeholder="Например: погулять по городу, сходить в уютное кафе..."></textarea>
+        <button class="btn primary full" id="next3">Дальше <span>→</span></button>
+      </section>
+
+      <section class="screen" id="screen4">
+        <div class="emoji">💌</div>
+        <h1>Оставь свой Telegram</h1>
+        <p class="subtitle">Чтобы мы могли договориться о деталях</p>
+        <label class="field-label" for="telegram">Твой username</label>
+        <div class="telegram-input"><span>@</span><input id="telegram" type="text" maxlength="64" placeholder="username"></div>
+        <p class="privacy">Ответ отправится организатору приглашения в Telegram.</p>
+        <button class="btn primary full" id="submit">Отправить ответ 💗</button>
+        <p class="error" id="error" role="alert"></p>
+      </section>
+
+      <section class="screen" id="screenDone">
+        <div class="emoji">💐</div>
+        <h1>Ура! Ответ отправлен</h1>
+        <p class="subtitle">Теперь осталось выбрать настроение и дождаться нашей прогулки ✨</p>
+        <div class="final-heart">♡</div>
+      </section>
+    </section>
+    <p class="footer">сделано с теплом <span>♥</span></p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
