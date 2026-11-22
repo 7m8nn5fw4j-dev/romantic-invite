@@ -19,6 +19,14 @@ console.log("TOKEN DIAGNOSTICS:", {
 });
 console.log("CHECK SERVER JS: FILE STARTED");
 console.log("CHECK TOKEN EXISTS:", Boolean(token));
+console.log("TOKEN DIAGNOSTICS:", {
+  exists: Boolean(token),
+  length: token?.length,
+  trimmed: token === token?.trim(),
+  hasWhitespace: /\s/.test(token || ""),
+  hasQuotes: /["']/.test(token || ""),
+  correctFormat: /^\d+:[A-Za-z0-9_-]+$/.test(token || "")
+});
 const chatId = process.env.TELEGRAM_CHAT_ID;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
