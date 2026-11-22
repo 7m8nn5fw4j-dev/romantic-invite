@@ -9,6 +9,8 @@ dotenv.config();
 const app = express();
 const port = Number(process.env.PORT || 3000);
 const token = process.env.TELEGRAM_BOT_TOKEN;
+console.log("CHECK SERVER JS: FILE STARTED");
+console.log("CHECK TOKEN EXISTS:", Boolean(token));
 const chatId = process.env.TELEGRAM_CHAT_ID;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
