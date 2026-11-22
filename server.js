@@ -9,6 +9,14 @@ dotenv.config();
 const app = express();
 const port = Number(process.env.PORT || 3000);
 const token = process.env.TELEGRAM_BOT_TOKEN;
+console.log("TOKEN DIAGNOSTICS:", {
+  exists: Boolean(token),
+  length: token?.length,
+  trimmed: token === token?.trim(),
+  hasWhitespace: /\s/.test(token || ""),
+  hasQuotes: /["']/.test(token || ""),
+  correctFormat: /^\d+:[A-Za-z0-9_-]+$/.test(token || "")
+});
 console.log("CHECK SERVER JS: FILE STARTED");
 console.log("CHECK TOKEN EXISTS:", Boolean(token));
 const chatId = process.env.TELEGRAM_CHAT_ID;
