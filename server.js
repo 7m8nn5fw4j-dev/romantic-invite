@@ -18,7 +18,13 @@ app.use(express.static(path.join(__dirname, "public")));
 let bot = null;
 if (token) {
   bot = new TelegramBot(token, { polling: true });
-
+  bot.getMe()
+    .then((info) => {
+      console.log("TELEGRAM BOT OK:", info.username);
+    })
+    .catch((error) => {
+      console.log("TELEGRAM TOKEN ERROR:", error.response?.statusCode, error.message);
+    });
   // Помогает получить числовой chat_id: отправьте боту /start.
   bot.onText(/\/start/, async (msg) => {
     await bot.sendMessage(
