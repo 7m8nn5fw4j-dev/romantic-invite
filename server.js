@@ -19,7 +19,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 let bot = null;
 if (token) {
-  bot = new TelegramBot(token, { polling: false });
+  bot = new TelegramBot(token, {
+  polling: false,
+  baseApiUrl: "https://api.telegram.org"
+});
   bot.getMe()
     .then((info) => {
       console.log("TELEGRAM BOT OK:", info.username);
