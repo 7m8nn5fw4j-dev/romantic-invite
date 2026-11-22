@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 const port = Number(process.env.PORT || 3000);
-const token = process.env.TELEGRAM_BOT_TOKEN;
+const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
 console.log("TOKEN DIAGNOSTICS:", {
   exists: Boolean(token),
   length: token?.length,
